@@ -2,7 +2,7 @@ import { useState } from "react";
 import VisitItem from "../VisitItem/VisitItem";
 import Loader from "../Loader/Loader";
 import EmptyStateAnimation from "../EmptyStateAnimation/EmptyStateAnimation";
-import Pagination from "../Pagination/Pagination";
+// import Pagination from "../Pagination/Pagination";
 import { useGetVisitsQuery } from "../../store/api/visitApi";
 import styles from "./VisitList.module.scss";
 import { AnimatePresence, motion } from "motion/react";
@@ -15,8 +15,8 @@ const VisitList: React.FC = () => {
 
   const [filter, setFilter] = useState("");
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const postsPerPage = 6;
 
   const normalizedFilter = filter.toLowerCase();
 
@@ -29,13 +29,13 @@ const VisitList: React.FC = () => {
     .slice()
     .sort((a, b) => b.visit_at.localeCompare(a.visit_at));
 
-  console.log(filteredVisits);
+  // console.log(filteredVisits);
 
-  const totalPages = Math.ceil(filteredVisits.length / postsPerPage);
+  // const totalPages = Math.ceil(filteredVisits.length / postsPerPage);
 
-  const indexOfLast = currentPage * postsPerPage;
-  const indexOfFirst = indexOfLast - postsPerPage;
-  const currentVisits = filteredVisits.slice(indexOfFirst, indexOfLast);
+  // const indexOfLast = currentPage * postsPerPage;
+  // const indexOfFirst = indexOfLast - postsPerPage;
+  // const currentVisits = filteredVisits.slice(indexOfFirst, indexOfLast);
 
   return (
     <div className={styles.visit_list}>
@@ -76,8 +76,8 @@ const VisitList: React.FC = () => {
         <motion.div layout className={styles.visit_list__content}>
           {!isLoading &&
             !error &&
-            currentVisits.length > 0 &&
-            currentVisits.map((visit) => (
+            filteredVisits.length > 0 &&
+            filteredVisits.map((visit) => (
               <motion.div layout key={visit.id}>
                 <VisitItem visit={visit} />
               </motion.div>
@@ -85,13 +85,13 @@ const VisitList: React.FC = () => {
         </motion.div>
       </AnimatePresence>
 
-      {totalPages > 1 && (
+      {/* {totalPages > 1 && (
         <Pagination
           totalPages={totalPages}
           currentPage={currentPage}
           onPageChange={setCurrentPage}
         />
-      )}
+      )} */}
     </div>
   );
 };
