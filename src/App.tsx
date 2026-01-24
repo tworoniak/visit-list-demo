@@ -1,9 +1,14 @@
 import VisitList from "./components/VisitList/VisitList";
+import "./App.scss";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const App = () => {
   return (
-    <div className='max-w-lg mx-auto mt-10 p-6 bg-gray-100 rounded-lg shadow-lg text-center'>
-      <VisitList />
+    <div className='app-container'>
+      <Provider store={store}>
+        <VisitList />
+      </Provider>
     </div>
   );
 };

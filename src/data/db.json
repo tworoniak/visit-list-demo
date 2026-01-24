@@ -89,6 +89,96 @@
         "dob": "1958-01-15T00:00:00.000000Z",
         "age": "67yo"
       }
+    },
+    {
+      "id": "9e224959-b485-43f7-8c3d-c0b47b5b1a28x",
+      "visit_at": "2026-01-11T14:00:00.000000Z",
+      "status": "in_progress",
+      "note_status": "in_progress",
+      "is_checked_in": false,
+      "completed_in_ehr": false,
+      "patient": {
+        "first_name": "Lois",
+        "last_name": "Lane",
+        "gender": "Female",
+        "dob": "1935-07-01T00:00:00.000000Z",
+        "age": "89yo"
+      }
+    },
+    {
+      "id": "9e27e571-7332-41b3-bf55-5d6bb05241bcx",
+      "visit_at": "2026-02-11T15:30:00.000000Z",
+      "status": "not_started",
+      "note_status": "not_generated",
+      "is_checked_in": true,
+      "completed_in_ehr": false,
+      "patient": {
+        "first_name": "Jean",
+        "last_name": "Grey",
+        "gender": "Female",
+        "dob": "1966-06-18T00:00:00.000000Z",
+        "age": "58yo"
+      }
+    },
+    {
+      "id": "9e23dff1-925b-48e4-9a80-eaaa9f6e1977x",
+      "visit_at": "2026-02-11T18:15:00.000000Z",
+      "status": "in_progress",
+      "note_status": "in_progress",
+      "is_checked_in": false,
+      "completed_in_ehr": false,
+      "patient": {
+        "first_name": "Logan",
+        "last_name": "Howlett",
+        "gender": "Male",
+        "dob": "1978-09-10T00:00:00.000000Z",
+        "age": "46yo"
+      }
+    },
+    {
+      "id": "9e2fd5cd-2284-44d1-9c26-6c81de7efb52x",
+      "visit_at": "2026-02-11T19:45:00.000000Z",
+      "status": "note_ready",
+      "note_status": "success",
+      "is_checked_in": false,
+      "completed_in_ehr": false,
+      "patient": {
+        "first_name": "Clark",
+        "last_name": "Kent",
+        "gender": "Male",
+        "dob": "1980-03-17T00:00:00.000000Z",
+        "age": "44yo"
+      }
+    },
+    {
+      "id": "9e2fd5cd-8478-4a71-a590-4abf7feedd4dx",
+      "visit_at": "2022-02-11T21:20:00.000000Z",
+      "status": "in_progress",
+      "note_status": "in_progress",
+      "is_checked_in": true,
+      "completed_in_ehr": false,
+      "patient": {
+        "first_name": "Charles",
+        "last_name": "Xavier",
+        "gender": "Male",
+        "dob": "1980-03-17T00:00:00.000000Z",
+        "age": "44yo"
+      }
+    },
+    {
+      "id": "9e2fd5cd-d4a8-497c-b1c6-724d7c09bde4x",
+      "visit_at": "2023-02-11T22:45:00.000000Z",
+      "status": "note_ready",
+      "note_status": "success",
+      "is_checked_in": false,
+      "completed_in_ehr": false,
+      "patient": {
+        "first_name": "Barry",
+        "last_name": "Allen",
+        "gender": "Male",
+        "dob": "1958-01-15T00:00:00.000000Z",
+        "age": "67yo"
+      }
     }
   ]
 }

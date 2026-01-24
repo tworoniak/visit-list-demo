@@ -1,45 +1,34 @@
 import type { Visit } from "../../types";
 import styles from "./VisitItem.module.scss";
-import { formatTime } from "../../utilities/formatters";
+import { formatTime, formatDate, formatGender } from "../../utils/formatters";
 import StatusBadge from "../StatusBadge/StatusBadge";
 
-const VisitItem = ({ visit }: { visit: Visit }) => {
-  // const getCategoryClass = () => {
-  //   switch (visit.status) {
-  //     case "A":
-  //       return styles["visit_item--category-a"];
-  //     case "B":
-  //       return styles["visit_item--category-b"];
-  //     case "C":
-  //       return styles["visit_item--category-c"];
-  //     case "D":
-  //       return styles["visit_item--category-d"];
-  //     default:
-  //       return "";
-  //   }
-  // };
+interface VisitItemProps {
+  visit: Visit;
+}
 
-  // ${getCategoryClass()}
-
+const VisitItem: React.FC<VisitItemProps> = ({ visit }) => {
   return (
-    <div className={`${styles.visit_item}`}>
-      <div className={styles.visit_item__patient_info}>
-        <div className={styles.visit_item__text}>
+    <div className={styles.visit_item}>
+      <div className={styles.visit_item__patient}>
+        <div className={styles.visit_item__time}>
           {formatTime(visit.visit_at)}
-          {/* Visit Date: {new Date(visit.visit_at).toLocaleDateString()} */}
         </div>
-        <div className={styles.visit_item__name}>
+        <div className={styles.visit_item__patient_name}>
           {visit.patient.first_name} {visit.patient.last_name}
         </div>
+        <div className={styles.visit_item__patient_info}>
+          {visit.patient.age} ({formatGender(visit.patient.gender)}) |{" "}
+          {formatDate(visit.patient.dob)}
+        </div>
       </div>
-      <div className='styles.visit_item__patient_status'>
+      <div className={styles.visit_item__status_badge}>
         <StatusBadge
           status={visit.status}
           note_status={visit.note_status}
           is_checked_in={visit.is_checked_in}
           completed_in_ehr={visit.completed_in_ehr}
         />
-        {/* <p className={styles.visit_item__text}>{visit.status}</p> */}
       </div>
     </div>
   );

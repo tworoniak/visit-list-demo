@@ -1,14 +1,13 @@
 import { useState } from "react";
 import VisitItem from "../VisitItem/VisitItem";
-import FilterInput from "../FilterInput/FilterInput";
+// import FilterInput from "../FilterInput/FilterInput";
 import Loader from "../Loader/Loader";
 import EmptyStateAnimation from "../EmptyStateAnimation/EmptyStateAnimation";
 // import Pagination from "../Pagination/Pagination";
 import { useGetVisitsQuery } from "../../store/api/visitApi";
 import styles from "./VisitList.module.scss";
 import { AnimatePresence, motion } from "motion/react";
-
-// import type { Visit, Patient } from "../../types";
+import SearchBar from "../SearchBar/SearchBar";
 
 const VisitList: React.FC = () => {
   const { data: visits = [], isLoading, error, refetch } = useGetVisitsQuery();
@@ -19,11 +18,6 @@ const VisitList: React.FC = () => {
 
   // const [currentPage, setCurrentPage] = useState(1);
   // const postsPerPage = 4;
-
-  // const patientName =
-  //   `${visits.patient?.first_name ?? ""} ${visits.patient?.last_name ?? ""}`.trim();
-
-  // console.log(patientName);
 
   const normalizedFilter = filter.toLowerCase();
 
@@ -46,11 +40,17 @@ const VisitList: React.FC = () => {
 
   return (
     <div className={styles.visit_list}>
-      <h2>Visit List</h2>
-      <FilterInput
+      <h2>Visits</h2>
+      {/* <FilterInput
         filter={filter}
         placeholder='Filter patients by name...'
         onChange={setFilter}
+      /> */}
+
+      <SearchBar
+        value={filter}
+        onChange={setFilter}
+        placeholder='Filter patients by name...'
       />
 
       {isLoading && <Loader />}
@@ -97,20 +97,7 @@ const VisitList: React.FC = () => {
           currentPage={currentPage}
           onPageChange={setCurrentPage}
         />
-      )}  */}
-
-      {/* <AnimatePresence mode='wait'>
-        <motion.div layout className={styles.visit_list__content}>
-          {!isLoading &&
-            !error &&
-            visits.length > 0 &&
-            visits.map((visit) => (
-              <motion.div layout key={visit.id}>
-                <VisitItem visit={visit} />
-              </motion.div>
-            ))}
-        </motion.div>
-      </AnimatePresence> */}
+      )} */}
     </div>
   );
 };
