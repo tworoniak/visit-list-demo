@@ -1,0 +1,78 @@
+.visit_item {
+  border-radius: var(--border-radius-s);
+  background-color: var(--background-color);
+  padding: var(--spacing-sm);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  // flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  border: 1px solid #4b5563;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-light-gray);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+  }
+
+  &__patient_info {
+    text-align: left;
+  }
+
+  &__patient_status {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__name {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  &__text {
+    color: var(--color-text);
+    font-size: 0.875rem;
+    margin: 0.25rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // Category-based border colors
+  &--category-a {
+    border: 2px solid #ef4444;
+
+    &:hover {
+      background-color: #fecaca;
+    }
+  }
+
+  &--category-b {
+    border: 2px solid #22c55e;
+
+    &:hover {
+      background-color: #bbf7d0;
+    }
+  }
+
+  &--category-c {
+    border: 2px solid #eab308;
+
+    &:hover {
+      background-color: #fef08a;
+    }
+  }
+
+  &--category-d {
+    border: 2px solid #6366f1;
+
+    &:hover {
+      background-color: #e0e7ff;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+// some styles....
+.statuses {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.status_badge {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: var(--border-radius-xs);
+  padding: var(--spacing-s) var(--spacing-sm);
+  font-size: 1rem;
+
+  // Status variants
+  &__status {
+    &_not_started {
+      color: #c15f00;
+      background-color: #c15f001a;
+    }
+
+    &_error {
+      color: #ff3d31;
+      background-color: #ff3d311a;
+    }
+
+    &_completed {
+      color: #00af8a;
+      background-color: #00af8a1a;
+    }
+
+    &_note_generated {
+      color: #3576e7;
+      background-color: #3576e71a;
+    }
+
+    &_recorded {
+      color: #9f0030;
+      background-color: #9f00301a;
+    }
+
+    &_transcribed {
+      color: #3576e7;
+      background-color: #3576e71a;
+    }
+
+    &_in_progress {
+      color: #ffa928;
+      background-color: #ffa9281a;
+    }
+
+    &_not_checked_in {
+      color: #ff70af;
+      background-color: #ff70af1a;
+    }
+
+    &_checked_in {
+      color: #935be8;
+      background-color: #935be81a;
+    }
+
+    &_unknown {
+      color: #757575;
+      background-color: #bbbbbb1a;
+    }
+  }
+}
